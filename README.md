@@ -1,2 +1,2 @@
 # HackSheffield5
-The code we developed at HackSheffield 5.
+A repository for the code our team wrote at Hack Sheffield 5.
