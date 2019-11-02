@@ -13,6 +13,7 @@ from keras.layers import Dense
 #DEFINITIONS
 redWine = r"http://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv"
 whiteWine = r"http://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-white.csv"
+EPOCHS = 20
 
 #MAIN CODE
 #Importing the Red and White Wine Data
@@ -52,7 +53,7 @@ NN.summary()
 NN.compile(loss='binary_crossentropy',
               optimizer='adam',
               metrics=['accuracy'])
-NN.fit(X_train, Y_train, epochs=20, batch_size=1, verbose=1)
+NN.fit(X_train, Y_train, epochs=EPOCHS, batch_size=1, verbose=1)
 
 #Generating Predictions
 evaluation = NN.evaluate(X_test, Y_test)
