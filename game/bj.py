@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 
 import random, os, sys
+from keras.models import load_model
+
+BlackJackModel = load_model("blackjack.h5")
 
 cardName = { 1: 'Ace', 2: 'Two', 3: 'Three', 4: 'Four', 5: 'Five', 6: 'Six', 7: 'Seven', 8: 'Eight', 9: 'Nine', 10: 'Ten', 11: 'Jack', 12: 'Queen', 13: 'King' }
 cardSuit = { 'c': 'Clubs', 'h': 'Hearts', 's': 'Spades', 'd': 'Diamonds' }
@@ -71,7 +74,7 @@ while keepPlaying:
 	playHuman = True
 	bustedHuman = False
 
-	while playHuman:
+	while playHumam:
 		os.system('clear')
 		print("Blackjack! Computer: "+str(score['computer'])+" You: "+str(score['human']))
 
@@ -92,9 +95,11 @@ while keepPlaying:
 		userInput = ''
 
 		while inputCycle:
-			userInput = input("(H)it, (S)tand, or (Q)uit: ").upper()
-			if userInput == 'H' or 'S' or 'Q':
+			userInput = input("(H)it, (S)tand, (M)achine or (Q)uit: ").upper()
+			if userInput == 'H' or 'S' or 'Q' or 'M':
 				inputCycle = False
+
+		if userInput == 'M':
 
 		if userInput == 'H':
 			hand['human'].append(deck.pop(0))
