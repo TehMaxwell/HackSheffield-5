@@ -18,34 +18,32 @@ def playerHand(deck, playerCount, playerBusts):
     while playerPlaying:
         playerCount += deck.pop()
         print("Player Count: {}".format(playerCount))
+# '''
+#         if playerCount <= 21:
+#
+#             if playerCount < 17:
+#                 playerPlaying = True
+#             else:
+#                 playerPlaying = False
+#             '''
+        inputWrong = True
+        while inputWrong:
+            #Getting the Players Decision
+            decision = input("(S)tick or (T)wist: ").upper()
 
-        if playerCount <= 21:
-            
-            if playerCount < 17:
+            #Processing the players decision
+            if decision == "T":
                 playerPlaying = True
-            else:
+                inputWrong = False
+            elif decision == "S":
                 playerPlaying = False
-
-            '''
-            inputWrong = True
-            while inputWrong:
-                #Getting the Players Decision
-                decision = input("(S)tick or (T)wist: ").upper()
-
-                #Processing the players decision
-                if decision == "T":
-                    playerPlaying = True
-                    inputWrong = False
-                elif decision == "S":
-                    playerPlaying = False
-                    inputWrong = False
-                else:
-                    inputWrong = True
-            '''
-        else:
-            print("Player Bust with {}".format(playerCount))
-            playerPlaying = False
-            playerBusts += 1
+                inputWrong = False
+            else:
+                inputWrong = True
+        # else:
+        #     print("Player Bust with {}".format(playerCount))
+        #     playerPlaying = False
+        #     playerBusts += 1
 
     return playerCount, playerBusts
 
