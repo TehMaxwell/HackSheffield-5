@@ -40,10 +40,10 @@ def playerHand(deck, playerCount, playerBusts):
                 inputWrong = False
             else:
                 inputWrong = True
-        # else:
-        #     print("Player Bust with {}".format(playerCount))
-        #     playerPlaying = False
-        #     playerBusts += 1
+        else:
+             print("Player Bust with {}".format(playerCount))
+             playerPlaying = False
+             playerBusts += 1
 
     return playerCount, playerBusts
 
@@ -73,7 +73,7 @@ def machineHand(deck, model, machineCount, machineBusts):
 
 #MAIN CODE
 #Importing the Machine Learing Model
-NN = load_model("blackjack.h5")
+NN = load_model("blackjackGauss.h5")
 
 #For all hands
 handCount = 0
